@@ -1,0 +1,16 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+    <div class="container">
+      <%= link_to t('app.name'), root_path, id: "logo", class: "navbar-brand" %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><%= link_to t('menu.home'),   root_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to t('menu.help'),   help_path, class: "nav-link" %></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
