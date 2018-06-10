@@ -7,3 +7,12 @@ en:
     help: Help
     about: About
     contact: Contact
+    debug: Debug
+    add:
+      city_name: City Name
+      add_city: Add City
+  time:
+    am: am
+    formats:
+      short: "%a | %b %d | %I:%M %p"
+    pm: pm

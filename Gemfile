@@ -27,12 +27,10 @@ group :development do
 end
 
 group :test do
-  # Adds support for Capybara system testing
-  gem 'capybara',             '3.2.1'
-  gem 'capybara-webkit',      '1.15.0'
-  gem 'minitest-reporters',   '1.3.0'
-  gem 'guard',                '2.14.2'
-  gem 'guard-minitest',       '2.4.6'
+  gem 'rails-controller-testing', '1.0.2'
+  gem 'minitest-reporters',       '1.3.0'
+  gem 'guard',                    '2.14.2'
+  gem 'guard-minitest',           '2.4.6'
 end
 
 group :production do

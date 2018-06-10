@@ -1,9 +1,12 @@
-<footer class="footer">
+<footer class="footer bg-white">
+  <div class="container bg-white">
   <small><%= t('app.copyright') %></small>
   <nav>
     <ul>
       <li><%= link_to t('menu.about'), '#' %></li>
       <li><%= link_to t('menu.contact'), '#' %></li>
+      <%= render 'layouts/debug_link' %>
     </ul>
   </nav>
+  </div>
 </footer>

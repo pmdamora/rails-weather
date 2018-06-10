@@ -1,277 +1,177 @@
+/* -----------------------------------------------------------
+ *	Project Name:    WeatherApp
+ *  Author:          Paul D'Amora
+ *  Author URI:      http://pauldamora.com
+ *  Version:         0.0.1
+ *  Created:         June 8, 2018
+ *  Modified:        June 9, 2018
+ *  [Table of contents]
+ *    0. Variables, Mixins
+ *	  1. Typography
+ *      1.1 Text Elements
+ *    2. Utilities
+ *		3. Structure
+ *      3.0 Header
+ *      3.1 Body
+ *      3.2 Miscellaneous
+ *      3.3 Footer
+----------------------------------------------------------- */
 @import "bootstrap";
 
-/* mixins, variables, etc. */
-@mixin box_sizing {
-    -moz-box-sizing:    border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing:         border-box;
-  }
-  
-/* universal */
 
+/* -----------------------------------------------------------
+	0. VARIABLES, MIXINS, ETC.
+----------------------------------------------------------- */
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+
+/* -----------------------------------------------------------
+	1. TYPOGRAPHY
+----------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+/* -----------------------------------------------------------
+  2. UTILITIES
+----------------------------------------------------------- */  
+.btn-default {
+  -webkit-appearance: none;
+  background-color: #ff73b3;
+  border: 0 none;
+  color: #fff;
+  &:hover, &:active, &.active, &:focus {
+    background-color: #e55a99;
+  }
+}
+
+
+/* -----------------------------------------------------------
+	3. STRUCTURE
+----------------------------------------------------------- */
+/* 3.0 Header
+----------------------------------------------------------- */
+header {
+  .navbar {
+    background-color: #355EA7;
+  }
+  .form-control {
+    border: 0 none;
+  }
+}
+
+
+/* 3.1 Body
+----------------------------------------------------------- */
 body {
-    padding-top: 5rem;
+  background-color: #fff;
+  height: 100%;
+  padding-top: 5rem;
+}
+
+.scroll {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+}
+
+/* Weather */
+.weather-col {
+  min-width: 287px;
+}
+
+.weather-card {
+  color: #d95720;
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
   }
-  
-  section {
-    overflow: auto;
+  .card-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
   }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  .center {
-    text-align: center;
-    h1 {
-      margin-bottom: 10px;
+  .temperature {
+    h1, h2, h3, h4, h5, h6 {
+      display: inline;
+      padding: 0 6px;
     }
-  }
-  
-  /* typography */
-  
-  h1, h2, h3, h4, h5, h6 {
-    line-height: 1;
-  }
-  
-  h1 {
-    font-size: 3em;
-    letter-spacing: -2px;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  
-  h2 {
-    font-size: 1.2em;
-    letter-spacing: -1px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: normal;
-    color: $gray-500;
-  }
-  
-  p {
-    font-size: 1.1em;
-    line-height: 1.7em;
-  }
-  
-  
-  /* footer */
-  
-  footer {
-    margin-top: 45px;
-    padding-top: 5px;
-    border-top: 1px solid $gray-300;
-    color: $gray-500;
-    a {
-      color: $gray-600;
-      &:hover {
-        color: $gray-700;
+    h1 { 
+      position: relative;
+      .degree {
+        font-weight: 200;
+        position: absolute;
+        right: -5px;
+        top: -8px;
+      }
+      .degree::after {
+        content: "°"; 
       }
     }
-    small {
-      float: left;
-    }
-    ul {
-      float: right;
-      list-style: none;
-      li {
-        float: left;
-        margin-left: 15px;
-      }
+    h6 {
+      font-size: 0.7rem;
     }
   }
-  
-  
-  /* miscellaneous */
-  
+}
+
+
+/* 3.2 Miscellaneous
+----------------------------------------------------------- */
+#debug { 
+  padding-bottom: 20px;
   .debug_dump {
     @include box_sizing;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    background-color: #343a40;
+    border-left: .5rem solid #868e96;
+    border-radius: .25rem;
     clear: both;
-    color: #333;
-    float: left;
+    color: white;
     font-size: 13px;
-    margin-top: 45px;
-    padding: 9.5px;
-    width: 100%;
-  }
-  
-  /* sidebar */
-  
-  aside {
-    section.user_info {
-      margin-top: 20px;
-    }
-    section {
-      padding: 10px 0;
-      margin-top: 20px;
-      &:first-child {
-        border: 0;
-        padding-top: 0;
-      }
-      span {
-        display: block;
-        margin-bottom: 3px;
-        line-height: 1;
-      }
-      h1 {
-        font-size: 1.4em;
-        text-align: left;
-        letter-spacing: -1px;
-        margin-bottom: 3px;
-        margin-top: 0px;
-      }
-    }
-  }
-  
-  .gravatar {
-    float: left;
-    margin-right: 10px;
-  }
-  
-  .gravatar_edit {
-    margin-top: 15px;
-  }
-  
-  .stats {
-    overflow: auto;
-    margin-top: 0;
-    padding: 0;
-    a {
-      float: left;
-      padding: 0 10px;
-      border-left: 1px solid $gray-300;
-      color: gray;
-      &:first-child {
-        padding-left: 0;
-        border: 0;
-      }
-      &:hover {
-        text-decoration: none;
-        color: blue;
-      }
-    }
-    strong {
-      display: block;
-    }
-  }
-  
-  .user_avatars {
-    overflow: auto;
-    margin-top: 10px;
-    .gravatar {
-      margin: 1px 1px;
-    }
-    a {
-      padding: 0;
-    }
-  }
-  
-  .users.follow {
-    padding: 0;
-  }
-  
-  
-  /* forms */
-  
-  input, textarea, select, .uneditable-input {
-    border: 1px solid #bbb;
-    width: 100%;
-    margin-bottom: 15px;
-    @include box_sizing;
-  }
-  
-  input {
-    height: auto !important;
-  }
-  
-  #error_explanation {
-    color: red;
-    ul {
-      color: red;
-      margin: 0 0 30px 0;
-    }
-  }
-  
-  .field_with_errors {
-    @extend .is-invalid;
-    .form-control {
-      color: $danger;
-    }
-  }
-  
-  .checkbox {
-    margin-top: -10px;
-    margin-bottom: 10px;
-    span {
-      margin-left: 20px;
-      font-weight: normal;
-    }
-  }
-  
-  #session_remember_me {
-    width: auto;
-    margin-left: 0;
-  }
-  
-  /* Users index */
-  
-  .users {
-    list-style: none;
     margin: 0;
-    li {
-      overflow: auto;
-      padding: 10px 0;
-      border-bottom: 1px solid $gray-300;
+    padding: 20px;
+    width: 100%;
+  }
+}
+
+
+/* 3.3 Footer
+----------------------------------------------------------- */
+footer {
+  color: $gray-500;
+  margin-top: 45px;
+  padding-top: 5px;
+  a {
+    color: $gray-600;
+    &:hover {
+      color: $gray-700;
     }
   }
-  
-  /* microposts */
-  
-  .microposts {
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
     list-style: none;
-    padding: 0;
     li {
-      padding: 10px 0;
-      border-top: 1px solid #e8e8e8;
-    }
-    .user {
-      margin-top: 5em;
-      padding-top: 0;
-    }
-    .content {
-      display: block;
-      margin-left: 60px;
-      img {
-        display: block;
-        padding: 5px 0;
-      }
-    }
-    .timestamp {
-      color: $gray-600;
-      display: block;
-      margin-left: 60px;
-    }
-    .gravatar {
       float: left;
-      margin-right: 10px;
-      margin-top: 5px;
+      margin-left: 15px;
     }
   }
-  
-  aside {
-    textarea {
-      height: 100px;
-      margin-bottom: 5px;
-    }
-  }
-  
-  span.picture {
-    margin-top: 10px;
-    input {
-      border: 0;
-    }
-  }
+}

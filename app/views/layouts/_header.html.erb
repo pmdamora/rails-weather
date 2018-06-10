@@ -1,14 +1,20 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+  <nav class="navbar navbar-expand-md fixed-top navbar-dark">
     <div class="container">
       <%= link_to t('app.name'), root_path, id: "logo", class: "navbar-brand" %>
+      <div class="input-group align-middle" style="width: auto">
+        <input type="text" class="form-control" placeholder="<%= t('menu.add.city_name') %>" aria-label="<%= t('menu.add.city_name') %>">
+        <div class="input-group-append">
+          <button class="btn btn-default" type="button"><%= t('menu.add.add_city') %></button>
+        </div>
+      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><%= link_to t('menu.home'),   root_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to t('menu.help'),   help_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to t('menu.home'), root_path, class: "nav-link #{active?(root_path)}" %></li>
+          <li class="nav-item"><%= link_to t('menu.help'), help_path, class: "nav-link #{active?(help_path)}" %></li>
         </ul>
       </div>
     </div>
