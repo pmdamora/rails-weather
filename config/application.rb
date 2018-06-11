@@ -15,5 +15,8 @@ module WeatherApp
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    Timezone::Lookup.config(:google) do |c|
+      c.api_key = Rails.application.credentials.google_timezone[:api_key]
+    end
   end
 end

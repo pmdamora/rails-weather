@@ -11,6 +11,8 @@ gem 'turbolinks',              '5.0.1'  # Turbolinks makes navigating your web a
 gem 'jbuilder',                '2.7.0'  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'bootsnap',                '1.1.0', require: false  # Reduces boot times through caching; required in config/boot.rb
 gem 'bootstrap',               '4.1.1'
+gem 'timezone',                '1.2.12'
+gem 'faker',                   '1.7.3'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'  # Use sqlite3 as the database for Active Record
