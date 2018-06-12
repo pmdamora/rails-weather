@@ -1,4 +1,15 @@
 en:
+  activerecord:
+    attributes:
+      city:
+        name: "City"
+    errors:
+      models:
+        city:
+          attributes:
+            name:
+              blank: "Name is required"
+              taken: "- %{value} is already being monitored"
   app:
     name: Weather App
     copyright: © All rights reserved Paul D'Amora

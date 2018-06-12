@@ -1,8 +1,8 @@
 <div class="col-sm-3 weather-col">
   <div class="card text-center">
-    <img class="card-img-top" data-src="holder.js/255x200 alt="Card image cap">
+    <%# <img class="card-img-top" data-src="holder.js/255x200 alt="Card image cap"> %>
     <div class="card-body weather-card">
-      <h4 class="card-title"><%= city.name %></h4>
+      <h4 class="card-title"><%= city.name.capitalize %></h4>
       <h6 class="card-subtitle text-muted"><%= l city.dt, format: :short %></h6>
       <div class="temperature">
         <%# <h6 class="align-middle">54</h6>

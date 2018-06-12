@@ -1,0 +1,9 @@
+<% if @result %>
+  $('#add-city')[0].reset();
+  $('#errors').empty();
+  $('.scroll').append("<%= j render @city %>");
+  console.log("Successfully added <%= @city.name.capitalize %>.")
+<% else %>
+  $('#add-city')[0].reset();
+  $('#errors').html('<%= j render 'shared/error_messages', object: @city %>');
+<% end %>

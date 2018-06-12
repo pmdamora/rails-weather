@@ -34,16 +34,6 @@ class CityTest < ActiveSupport::TestCase
     assert_equal mixed_case_name.downcase, @city.reload.name
   end
 
-  test "timezone should be present" do
-    @city.timezone = "    "
-    assert_not @city.valid?
-  end
-
-  test "timezone should not be too long" do
-    @city.timezone = "a" * 51
-    assert_not @city.valid?
-  end
-
   test "temperature should return a valid temperature integer" do
     assert_includes -100..150, @city.temperature
   end
