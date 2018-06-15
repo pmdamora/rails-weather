@@ -1,15 +1,12 @@
 <div class="col-sm-3 weather-col">
   <div class="card text-center">
-    <%# <img class="card-img-top" data-src="holder.js/255x200 alt="Card image cap"> %>
+    <img class="card-img-top" data-src="holder.js/255x200" alt="Card image cap">
     <div class="card-body weather-card">
       <h4 class="card-title"><%= city.name.capitalize %></h4>
-      <h6 class="card-subtitle text-muted"><%= l city.dt, format: :short %></h6>
+      <h6 class="card-subtitle text-muted"><%= l dt(city.timezone), format: :short %></h6>
       <div class="temperature">
-        <%# <h6 class="align-middle">54</h6>
-        <h4 class="align-middle">57</h4> %>
-        <h1 class="align-middle"><%= city.temperature %><span class="degree"/></h1>
-        <%# <h4 class="align-middle">62</h4>
-        <h6 class="align-middle">55</h6> %>
+        <h1><%= temperature(city.name) %><span class="degree"></span></h1>
+        <div class="forecast" id="<%= css_id(city.name) %>-forecast"><%= raw forecast(city.name) %></div>
       </div>
     </div>
   </div>

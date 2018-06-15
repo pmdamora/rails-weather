@@ -34,8 +34,4 @@ class CityTest < ActiveSupport::TestCase
     assert_equal mixed_case_name.downcase, @city.reload.name
   end
 
-  test "temperature should return a valid temperature integer" do
-    assert_includes -100..150, @city.temperature
-  end
-
 end

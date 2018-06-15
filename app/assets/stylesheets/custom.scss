@@ -105,15 +105,20 @@ body {
   .card-subtitle {
     font-size: 0.7rem;
     letter-spacing: 2px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     text-transform: uppercase;
   }
   .temperature {
+    overflow: hidden;
+    padding-top: 10px;
+    white-space: nowrap;
     h1, h2, h3, h4, h5, h6 {
       display: inline;
-      padding: 0 6px;
+      padding: 0 10px;
+      vertical-align: middle;
     }
     h1 { 
+      padding-left: 0;
       position: relative;
       .degree {
         font-weight: 200;
@@ -127,6 +132,15 @@ body {
     }
     h6 {
       font-size: 0.7rem;
+      padding-right: 0;
+    }
+
+    .forecast {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0%;
+      vertical-align: middle !important;
     }
   }
 }
