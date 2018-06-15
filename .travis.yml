@@ -4,7 +4,7 @@ script:
 - bundle exec rake db:migrate RAILS_ENV=test
 - bundle exec rake
 deploy:
-  prodivder: heroku
+  provider: heroku
   app: fast-cove-84745
   run: "rails db:migrate"
   api_key:
