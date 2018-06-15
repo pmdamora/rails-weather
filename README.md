@@ -6,6 +6,10 @@ This application displays the weather.
 
 All source code is available under the MIT License. See [LICENSE.md](LICENSE.md) for details.
 
+## [Demo](https://fast-cove-84745.herokuapp.com/)
+
+This application is available on Heroku as a demonstration.
+
 ## Getting started
 
 To get started with the app, clone the repo and then install the needed gems:
