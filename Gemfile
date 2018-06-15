@@ -33,6 +33,7 @@ group :test do
   gem 'minitest-reporters',       '1.3.0'
   gem 'guard',                    '2.14.2'
   gem 'guard-minitest',           '2.4.6'
+  gem 'rake'
 end
 
 group :production do
