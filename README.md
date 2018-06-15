@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/pmdamora/rails-weather.svg?branch=master)](https://travis-ci.org/pmdamora/rails-weather)
+
 # Ruby on Rails Weather Application
 
 This application displays the weather.
