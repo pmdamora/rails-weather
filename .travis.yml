@@ -1,8 +1,17 @@
 language: ruby
 bundler_args: "--without production"
+env:
+  global:
+    - CC_TEST_REPORTER_ID=f6678f154a744f1cea9cf52a972f49be81fe2783f2affc17f4e7ecd5c1727892
+before_script:
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- ./cc-test-reporter before-build
 script:
 - bundle exec rake db:migrate RAILS_ENV=test
 - bundle exec rake
+after_script:
+- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 stages:
 - test
 - deploy
