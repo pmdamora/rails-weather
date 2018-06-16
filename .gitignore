@@ -31,3 +31,6 @@
 
 # Ignore Spring files.
 /spring/*.pid
+
+# Ignore coverage files
+cover/*
