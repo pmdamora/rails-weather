@@ -13,7 +13,7 @@ jobs:
       script: skip  # we're not running tests
       deploy:
         provider: heroku
-        app: fast-cove-84745
+        app: rails-weather-app
         run: "rails db:migrate"
         api_key:
           secure: m+n4/byckOpOqYhmwVi2AYwEFbabJOAzCzQeZAbz32lGerCHcsTXB/rsV+7TAHpfF5LawFXU3mfb7ssoMKa/1vZTmBZoR6uP9APc9WJemMC9XJIPkC11RFjrKU1UOsPzjkW/f2q362A6lNS8XXrE93tRBQpeErIXbniklA+ATqmN1O4tbXFFFJoZDl9h1rZPw3ubClQrtAr8JxI0R3HrCqoonrQAWbyyFWm7+mWlx9KIdj9pkEwBebwbNjC5ulmPyEjVSh9vMyikfExNS4oLnRwpP8P1TQhxMxQ/2icYxBdbhUyHBry/pGS1rycy84/5ox2qL50eoW+DzE3B8swwOLKnTvR0Q7UxxYOBom9ZuLF77O5bberOfSr3p0SmFpFKk8E9mpCdlhyqPxvzb1DvZFV0JXPqtnTKoP/Sw1swlVL1byfZNFTaxBcVpQ6rO4WOySy3zoliDBKyWlWsQowlXE6gZwYF3BAumtu/pnDQ/tM8Zldl9nM2lGp9HLJr5EKq0hkMjTuFCKLjJmO3fhgfnXdp84oHFx0rpgKDTaPJyWoF6A5hShGhqiXpbuLoNtVqbZwvWmxaasbnKt82RywpKF3uwI0jloGwwlAUJQA4amMNFx3m4dAFNyJHleA04ZWl6FVKTca4iGGXyGZlzm4ksAl0o5XZ5i2lmo7gdKK5iIo=
