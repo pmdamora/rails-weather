@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/pmdamora/rails-weather.svg?branch=master)](https://travis-ci.org/pmdamora/rails-weather)
+[![Build Status](https://travis-ci.org/pmdamora/rails-weather.svg?branch=master)](https://travis-ci.org/pmdamora/rails-weather) [![Maintainability](https://api.codeclimate.com/v1/badges/39e31ea904e1d505ee32/maintainability)](https://codeclimate.com/github/pmdamora/rails-weather/maintainability)
 
 # Ruby on Rails Weather Application
 
