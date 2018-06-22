@@ -8,7 +8,7 @@ This application displays the weather.
 
 All source code is available under the MIT License. See [LICENSE.md](LICENSE.md) for details.
 
-## [Demo](https://fast-cove-84745.herokuapp.com/)
+## [Demo](https://rails-weather-app.herokuapp.com/)
 
 This application is available on Heroku as a demonstration.
 
