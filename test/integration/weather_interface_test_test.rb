@@ -19,7 +19,7 @@ class WeatherInterfaceTestTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_match name, response.body
   end
-  
+
   test "should add city with ajax" do
     name = "Tokyo"
     assert_difference 'City.count', 1 do
@@ -41,6 +41,5 @@ class WeatherInterfaceTestTest < ActionDispatch::IntegrationTest
     assert_no_difference 'City.count', 1 do
       post cities_path, xhr: true, params: { city: { name: "" } }
     end
-    # assert_match 'Name can&#39;t be blank', response.body
   end
 end

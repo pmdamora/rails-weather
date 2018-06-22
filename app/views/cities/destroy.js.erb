@@ -1,0 +1,7 @@
+<% if @result %>
+  $('#errors').empty();
+  $('#<%= css_id(@city.name) %>-col').remove();
+  console.log("Successfully removed <%= @city.name.capitalize %>.")
+<% else %>
+  $('#errors').html('<%= j render 'shared/error_messages', object: @city %>');
+<% end %>
