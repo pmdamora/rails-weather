@@ -34,7 +34,6 @@ group :test do
   gem 'guard',                    '2.14.2'
   gem 'guard-minitest',           '2.4.6'
   gem 'rake'
-  gem 'simplecov', require: false
 end
 
 group :production do

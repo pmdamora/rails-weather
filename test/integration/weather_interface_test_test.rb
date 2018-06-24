@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class WeatherInterfaceTestTest < ActionDispatch::IntegrationTest
+
+  def setup
+    @city = cities(:one)
+  end
+
   test "weather interface" do
     get root_path
     assert_select 'div.weather-col'
@@ -42,4 +47,21 @@ class WeatherInterfaceTestTest < ActionDispatch::IntegrationTest
       post cities_path, xhr: true, params: { city: { name: "" } }
     end
   end
+
+  test "should remove city" do
+    assert_difference 'City.count', -1 do
+      delete city_path(@city)
+    end
+    assert_redirected_to root_url
+    follow_redirect!
+    assert_no_match @city.name, response.body
+  end
+
+  test "should remove city with ajax" do
+    assert_difference 'City.count', -1 do
+      delete city_path(@city), xhr: true
+    end
+    assert_no_match @city.name, response.body
+  end
+
 end

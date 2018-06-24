@@ -1,4 +1,3 @@
-# Defines the matching rules for Guard.
 guard :minitest, spring: "bin/rails test", all_on_start: false do
   watch(%r{^test/(.*)/?(.*)_test\.rb$})
   watch('test/test_helper.rb') { 'test' }
@@ -33,4 +32,9 @@ end
 # Returns the controller tests corresponding to the given resource.
 def controller_test(resource)
   "test/controllers/#{resource}_controller_test.rb"
+end
+
+# Returns all tests for the given resource.
+def resource_tests(resource)
+  integration_tests(resource) << controller_test(resource)
 end
